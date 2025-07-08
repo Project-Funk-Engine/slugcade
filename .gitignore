@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Mac Stuff
+.DS_Store
+
+# C# Stuff
+
+
+.idea/.idea.Funk Engine/.idea/
+
+*.DotSettings.user
+export_presets.cfg
+*.translation
+addons/godotsteam/win64/~libgodotsteam.windows.template_debug.x86_64.dll
+
+.idea/
