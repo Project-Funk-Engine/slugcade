@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhh7yd60orf7q"]
+
+[ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="1_7e78s"]
+[ext_resource type="Script" uid="uid://c5thcdrco6w6o" path="res://LickTheSlug/LickTheSlug.cs" id="1_w344w"]
+[ext_resource type="AudioStream" uid="uid://dtwa2j2kdprjx" path="res://LickTheSlug/LickSound.wav" id="2_augoa"]
+[ext_resource type="Texture2D" uid="uid://caet0xrc0eexg" path="res://LickTheSlug/LickBG.png" id="2_jppqo"]
+[ext_resource type="Texture2D" uid="uid://nxgbkrl3t1df" path="res://LickTheSlug/Slug.png" id="3_1n60g"]
+[ext_resource type="Script" uid="uid://5ck2q0qriq8l" path="res://LickTheSlug/Scripts/Slug.cs" id="4_1n60g"]
+[ext_resource type="Texture2D" uid="uid://b03i56tls2cu1" path="res://LickTheSlug/Tongue.png" id="7_r40au"]
+
+[node name="LickTheSlug" type="Node2D" node_paths=PackedStringArray("_slug", "_tongue", "_lickSound", "_timeLeftLabel", "_scoreLabel", "_timer")]
+script = ExtResource("1_w344w")
+_slug = NodePath("Slug")
+_tongue = NodePath("TongueCursor")
+_lickSound = NodePath("LickSound")
+_timeLeftLabel = NodePath("UI/CenterContainer/VBoxContainer/Timer")
+_scoreLabel = NodePath("UI/CenterContainer/VBoxContainer/Score")
+_timer = NodePath("Timer")
+
+[node name="LickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_augoa")
+volume_db = -5.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 59.0
+one_shot = true
+autostart = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label2" type="Label" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -942.0
+offset_top = -51.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_7e78s")
+theme_override_font_sizes/font_size = 50
+text = "(Please do not actually try and lick the slugs!)"
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+offset_right = 1920.0
+offset_bottom = 100.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7e78s")
+theme_override_font_sizes/font_size = 50
+text = "Lick The Slug"
+
+[node name="Timer" type="Label" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7e78s")
+theme_override_font_sizes/font_size = 50
+text = "00:59"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7e78s")
+theme_override_font_sizes/font_size = 50
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="BG" type="TextureRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("2_jppqo")
+
+[node name="Slug" type="Sprite2D" parent="."]
+position = Vector2(525, 321)
+texture = ExtResource("3_1n60g")
+script = ExtResource("4_1n60g")
+
+[node name="TongueCursor" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("7_r40au")
