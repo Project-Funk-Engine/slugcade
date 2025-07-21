@@ -13,7 +13,8 @@ config_version=5
 config/name="SlugCade"
 run/main_scene="uid://nd7ukwmx7jhi"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+run/max_fps=60
+config/icon="uid://nxgbkrl3t1df"
 
 [display]
 
@@ -25,6 +26,10 @@ window/stretch/scale_mode="integer"
 [dotnet]
 
 project/assembly_name="SlugCade"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Jarod/Making/Games/Godot/Exports/Recordings/screen.avi"
 
 [input]
 
