@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://mg7twywgp3ja" path="res://SlugSimulator/Scripts/SlugSimulator.cs" id="1_woy7n"]
 [ext_resource type="Texture2D" uid="uid://caet0xrc0eexg" path="res://LickTheSlug/LickBG.png" id="2_woy7n"]
 [ext_resource type="Texture2D" uid="uid://nxgbkrl3t1df" path="res://LickTheSlug/Slug.png" id="4_g2enq"]
-[ext_resource type="Script" uid="uid://d3pkhmy0u7da1" path="res://SlugSimulator/ControllableSlug.cs" id="5_g2enq"]
+[ext_resource type="Script" uid="uid://d3pkhmy0u7da1" path="res://SlugSimulator/Scripts/ControllableSlug.cs" id="5_g2enq"]
 
 [node name="SlugSimulator" type="Node2D" node_paths=PackedStringArray("_timeLeftLabel", "_timer", "_message")]
 script = ExtResource("1_woy7n")
@@ -50,7 +50,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_pqebb")
 theme_override_font_sizes/font_size = 30
-text = "slug"
 horizontal_alignment = 1
 
 [node name="BG" type="TextureRect" parent="."]
