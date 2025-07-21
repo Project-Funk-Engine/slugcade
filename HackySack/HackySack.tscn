@@ -21,12 +21,13 @@ size = Vector2(33, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf4w0"]
 size = Vector2(987, 180)
 
-[node name="HackySack" type="Node2D" node_paths=PackedStringArray("_hackySound", "_timeLeftLabel", "_scoreLabel", "_timer", "_theSack", "_theFoot", "_otherFoot")]
+[node name="HackySack" type="Node2D" node_paths=PackedStringArray("_hackySound", "_timeLeftLabel", "_scoreLabel", "_timer", "_message", "_theSack", "_theFoot", "_otherFoot")]
 script = ExtResource("1_s22y3")
 _hackySound = NodePath("HackySound")
 _timeLeftLabel = NodePath("UI/CenterContainer/VBoxContainer/Timer")
 _scoreLabel = NodePath("UI/CenterContainer/VBoxContainer/Score")
 _timer = NodePath("Timer")
+_message = NodePath("UI/Label")
 _theSack = NodePath("TheSack")
 _theFoot = NodePath("PlayerFeet")
 _otherFoot = NodePath("AutoFeet")
@@ -73,6 +74,18 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_8ox3o")
 theme_override_font_sizes/font_size = 25
 text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_8ox3o")
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="TheSack" type="CharacterBody2D" parent="."]

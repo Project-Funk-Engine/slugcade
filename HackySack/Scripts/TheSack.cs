@@ -30,10 +30,10 @@ public partial class TheSack : CharacterBody2D
     private void HandleCollisions(KinematicCollision2D collision)
     {
         if (collision == null || _collisionFudgeCounter > 0) return;
-        GD.Print(collision.GetNormal());
         if (collision.GetCollider() is not StaticBody2D)
         {
             Footed?.Invoke();
+            _direction.X += (float)GD.RandRange(-.5f, .5f); //Add some variance
         }
 
         _direction = collision.GetNormal().Y != 0 ? new Vector2(_direction.X, _direction.Y * -1) : new Vector2(_direction.X * -1, _direction.Y);

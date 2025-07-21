@@ -11,6 +11,8 @@ public partial class HackySack : Node2D
     private int _score;
     [Export]
     private Timer _timer;
+
+    [Export] private Label _message;
     
     [Export]
     private TheSack _theSack;
@@ -52,14 +54,18 @@ public partial class HackySack : Node2D
         GD.Print("Time's up, pausing scene for now!");
     }
 
+    private string[] _messages = ["Nice.", "Keep it up!", "Go for 100!"];
     private void IncScore()
     {
+        _message.Text = _messages[_score % _messages.Length];
         _score++;
         _scoreLabel.Text = "Score: " + _score.ToString();
+        _hackySound.Play();
     }
 
     private void ClearScore()
     {
+        _message.Text = "Bro...";
         _score = 0;
         _scoreLabel.Text = "Score: 0";
     }
