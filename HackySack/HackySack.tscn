@@ -1,3 +1,127 @@
-[gd_scene format=3 uid="uid://dlmxtxdfmus0x"]
+[gd_scene load_steps=13 format=3 uid="uid://dlmxtxdfmus0x"]
 
-[node name="HackySack" type="Node2D"]
+[ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="1_8ox3o"]
+[ext_resource type="Texture2D" uid="uid://caet0xrc0eexg" path="res://LickTheSlug/LickBG.png" id="1_dnurs"]
+[ext_resource type="AudioStream" uid="uid://dqfwkl8fgc8js" path="res://HackySack/HackyNoise.wav" id="1_nay07"]
+[ext_resource type="Script" uid="uid://c18mii0n7qx2i" path="res://HackySack/Scripts/HackySack.cs" id="1_s22y3"]
+[ext_resource type="Texture2D" uid="uid://dq76eeg4fdcfy" path="res://HackySack/Feet.png" id="3_il8mc"]
+[ext_resource type="Texture2D" uid="uid://d1xafa2unfxtd" path="res://HackySack/HackySack.png" id="4_pxo2j"]
+[ext_resource type="Script" uid="uid://8miqbpwjpoak" path="res://HackySack/Scripts/TheSack.cs" id="5_06w52"]
+[ext_resource type="Script" uid="uid://d2wmhw38xy8u0" path="res://HackySack/Scripts/PlayerFeet.cs" id="7_nkh0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06w52"]
+size = Vector2(33, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkh0n"]
+size = Vector2(33, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feqrw"]
+size = Vector2(33, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf4w0"]
+size = Vector2(987, 180)
+
+[node name="HackySack" type="Node2D" node_paths=PackedStringArray("_hackySound", "_timeLeftLabel", "_scoreLabel", "_timer", "_theSack", "_theFoot", "_otherFoot")]
+script = ExtResource("1_s22y3")
+_hackySound = NodePath("HackySound")
+_timeLeftLabel = NodePath("UI/CenterContainer/VBoxContainer/Timer")
+_scoreLabel = NodePath("UI/CenterContainer/VBoxContainer/Score")
+_timer = NodePath("Timer")
+_theSack = NodePath("TheSack")
+_theFoot = NodePath("PlayerFeet")
+_otherFoot = NodePath("AutoFeet")
+
+[node name="BG(Replace This Later)" type="TextureRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("1_dnurs")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 59.0
+one_shot = true
+autostart = true
+
+[node name="HackySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_nay07")
+volume_db = -5.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+offset_right = 960.0
+offset_bottom = 86.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8ox3o")
+theme_override_font_sizes/font_size = 25
+text = "Hacky Sack"
+
+[node name="Timer" type="Label" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8ox3o")
+theme_override_font_sizes/font_size = 25
+text = "00:59"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8ox3o")
+theme_override_font_sizes/font_size = 25
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="TheSack" type="CharacterBody2D" parent="."]
+position = Vector2(480, 280)
+motion_mode = 1
+script = ExtResource("5_06w52")
+
+[node name="Sprite2D" type="Sprite2D" parent="TheSack"]
+texture = ExtResource("4_pxo2j")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TheSack"]
+shape = SubResource("RectangleShape2D_06w52")
+
+[node name="AutoFeet" type="CharacterBody2D" parent="."]
+position = Vector2(100, 270)
+collision_mask = 0
+motion_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="AutoFeet"]
+texture = ExtResource("3_il8mc")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoFeet"]
+position = Vector2(-2.75, -0.5)
+shape = SubResource("RectangleShape2D_nkh0n")
+
+[node name="PlayerFeet" type="CharacterBody2D" parent="."]
+position = Vector2(860, 270)
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("7_nkh0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerFeet"]
+texture = ExtResource("3_il8mc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerFeet"]
+position = Vector2(2.25, 0)
+shape = SubResource("RectangleShape2D_feqrw")
+
+[node name="TopWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+position = Vector2(483.5, -78)
+shape = SubResource("RectangleShape2D_jf4w0")
+
+[node name="BottomWall" type="StaticBody2D" parent="."]
+position = Vector2(7, 705)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
+position = Vector2(483.5, -78)
+shape = SubResource("RectangleShape2D_jf4w0")
