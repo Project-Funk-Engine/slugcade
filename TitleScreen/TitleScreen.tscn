@@ -1,28 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://nd7ukwmx7jhi"]
+[gd_scene load_steps=7 format=3 uid="uid://nd7ukwmx7jhi"]
 
-[ext_resource type="Texture2D" uid="uid://cd0ji6rm1s2v8" path="res://icon.svg" id="1_bkvni"]
-[ext_resource type="Script" uid="uid://blbj43kpm1qna" path="res://TitleScreen/TitleButton.cs" id="2_g0pfn"]
+[ext_resource type="Script" uid="uid://b1wukt21q1qto" path="res://TitleScreen/TitleScreen.cs" id="1_uidrc"]
+[ext_resource type="Shader" uid="uid://c24kwaabn8wdb" path="res://TitleScreen/TitleScreen.gdshader" id="2_g0pfn"]
+[ext_resource type="Texture2D" uid="uid://bxpt4mxljf63r" path="res://TitleScreen/TitleText.png" id="3_ntd8f"]
+[ext_resource type="Texture2D" uid="uid://dw130vfo0kjis" path="res://TitleScreen/TitleScreen Background.jpg" id="3_ufa0f"]
+[ext_resource type="AudioStream" uid="uid://dtbtwlbcaw5dt" path="res://TitleScreen/251461__joshuaempyre__arcade-music-loop.wav" id="3_uidrc"]
 
-[node name="TitleScreen" type="Node2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntd8f"]
+shader = ExtResource("2_g0pfn")
+shader_parameter/scanline_thickness = 2.0
+shader_parameter/scanline_speed = 0.1
+shader_parameter/scanline_intensity = 0.5
+shader_parameter/chromatic_aberration_strength = 0.005
+shader_parameter/chromatic_aberration_direction = Vector2(1, 0)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(559, 279)
-texture = ExtResource("1_bkvni")
+[node name="TitleScreen" type="Node2D" node_paths=PackedStringArray("_FortunateSlugButton", "_HackySlugButton", "_LickSlugButton", "_SlugSimulatorButton")]
+script = ExtResource("1_uidrc")
+_FortunateSlugButton = NodePath("GridContainer/FortunateButton")
+_HackySlugButton = NodePath("GridContainer/HackyButton")
+_LickSlugButton = NodePath("GridContainer/LickButton")
+_SlugSimulatorButton = NodePath("GridContainer/SimulateButton")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 197.0
-offset_top = 81.0
-offset_right = 967.0
-offset_bottom = 156.0
-text = "This will eventually have some sort of cool stuff and a game select screen I guess.
+[node name="Background Image" type="Sprite2D" parent="."]
+position = Vector2(479, 251)
+scale = Vector2(1.48909, 1.87611)
+texture = ExtResource("3_ufa0f")
 
-Would also be cool if we could fall back to some sort of attract screen but those are long term goals."
-horizontal_alignment = 1
+[node name="Title Text" type="Sprite2D" parent="."]
+position = Vector2(509, 90)
+texture = ExtResource("3_ntd8f")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 508.0
-offset_top = 401.0
-offset_right = 620.0
-offset_bottom = 479.0
-text = "Clicked 0 times"
-script = ExtResource("2_g0pfn")
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 172.0
+offset_top = 278.0
+offset_right = 537.0
+offset_bottom = 360.0
+scale = Vector2(1.6911, 2.53947)
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="FortunateButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Fortunate Slug"
+
+[node name="HackyButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Hacky Sack"
+
+[node name="LickButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Lick The Slug"
+
+[node name="SimulateButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Slug Simulator"
+
+[node name="CRT Shader" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ntd8f")
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 21.0
+offset_bottom = 32.0
+scale = Vector2(25.0582, 14.1751)
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uidrc")
+volume_db = -16.155
+autoplay = true
