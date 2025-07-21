@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b440jofslskw0" path="res://FortunateSlug/Slugtar.cs" id="1_om2cr"]
 [ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="2_fvi0b"]
 [ext_resource type="Texture2D" uid="uid://y5eny6803xm1" path="res://FortunateSlug/SLUGTAR.jpg" id="3_1fto1"]
-[ext_resource type="Shader" uid="uid://clm4qto8j7pwj" path="res://FortunateSlug/Pixelate.gdshader" id="3_v7g45"]
+[ext_resource type="Shader" path="res://FortunateSlug/Pixelate.gdshader" id="3_v7g45"]
 [ext_resource type="AudioStream" uid="uid://df62mjyoqfff7" path="res://FortunateSlug/ZoltarTheme.mp3" id="4_fvi0b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mau7l"]

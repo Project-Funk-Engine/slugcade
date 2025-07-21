@@ -11,6 +11,9 @@ public partial class Slugtar : Node2D
         if (@event.IsActionPressed("ButtonA"))
         {
             _outputLabel.Text = GetRandFortune();
+            
+            var timer = GetTree().CreateTimer(10.0f);
+            timer.Timeout += () => GetTree().ChangeSceneToFile("res://TitleScreen/TitleScreen.tscn");
         }
     }
     

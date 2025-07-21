@@ -29,8 +29,8 @@ public partial class SlugSimulator : Node2D
     
     private void TimesUp()
     {
-        ProcessMode = ProcessModeEnum.Disabled;
-        GD.Print("Time's up, pausing scene for now!");
+        GD.Print("Time's up, going home");
+        GetTree().ChangeSceneToFile("res://TitleScreen/TitleScreen.tscn");
     }
 
     private int _frameTimer = 0;
