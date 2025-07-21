@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dhh7yd60orf7q"]
 
 [ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="1_7e78s"]
-[ext_resource type="Script" uid="uid://c5thcdrco6w6o" path="res://LickTheSlug/LickTheSlug.cs" id="1_w344w"]
+[ext_resource type="Script" uid="uid://c5thcdrco6w6o" path="res://LickTheSlug/Scripts/LickTheSlug.cs" id="1_w344w"]
 [ext_resource type="AudioStream" uid="uid://dtwa2j2kdprjx" path="res://LickTheSlug/LickSound.wav" id="2_augoa"]
 [ext_resource type="Texture2D" uid="uid://caet0xrc0eexg" path="res://LickTheSlug/LickBG.png" id="2_jppqo"]
 [ext_resource type="Texture2D" uid="uid://nxgbkrl3t1df" path="res://LickTheSlug/Slug.png" id="3_1n60g"]
