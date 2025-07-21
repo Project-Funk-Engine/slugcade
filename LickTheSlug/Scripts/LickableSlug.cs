@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Slug : Sprite2D
+public partial class LickableSlug : Sprite2D
 {
     private float _speed = 20;
     private Vector2 _direction = Vector2.Zero;

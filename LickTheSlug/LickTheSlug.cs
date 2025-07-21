@@ -4,7 +4,7 @@ using System;
 public partial class LickTheSlug : Node2D
 {
     [Export]
-    private Slug _slug;
+    private LickableSlug _slug;
     [Export] private Sprite2D _tongue;
     private float _tongueSpeed = 100;
     [Export] private AudioStreamPlayer _lickSound;

@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dtwa2j2kdprjx" path="res://LickTheSlug/LickSound.wav" id="2_augoa"]
 [ext_resource type="Texture2D" uid="uid://caet0xrc0eexg" path="res://LickTheSlug/LickBG.png" id="2_jppqo"]
 [ext_resource type="Texture2D" uid="uid://nxgbkrl3t1df" path="res://LickTheSlug/Slug.png" id="3_1n60g"]
-[ext_resource type="Script" uid="uid://5ck2q0qriq8l" path="res://LickTheSlug/Scripts/Slug.cs" id="4_1n60g"]
+[ext_resource type="Script" uid="uid://5ck2q0qriq8l" path="res://LickTheSlug/Scripts/LickableSlug.cs" id="4_1n60g"]
 [ext_resource type="Texture2D" uid="uid://b03i56tls2cu1" path="res://LickTheSlug/Tongue.png" id="7_r40au"]
 
 [node name="LickTheSlug" type="Node2D" node_paths=PackedStringArray("_slug", "_tongue", "_lickSound", "_timeLeftLabel", "_scoreLabel", "_timer")]
