@@ -14,12 +14,12 @@ shader_parameter/scanline_intensity = 0.5
 shader_parameter/chromatic_aberration_strength = 0.005
 shader_parameter/chromatic_aberration_direction = Vector2(1, 0)
 
-[node name="TitleScreen" type="Node2D" node_paths=PackedStringArray("_FortunateSlugButton", "_HackySlugButton", "_LickSlugButton", "_SlugSimulatorButton")]
+[node name="TitleScreen" type="Node2D" node_paths=PackedStringArray("_fortunateSlugButton", "_hackySlugButton", "_lickSlugButton", "_slugSimulatorButton")]
 script = ExtResource("1_uidrc")
-_FortunateSlugButton = NodePath("GridContainer/FortunateButton")
-_HackySlugButton = NodePath("GridContainer/HackyButton")
-_LickSlugButton = NodePath("GridContainer/LickButton")
-_SlugSimulatorButton = NodePath("GridContainer/SimulateButton")
+_fortunateSlugButton = NodePath("GridContainer/FortunateButton")
+_hackySlugButton = NodePath("GridContainer/HackyButton")
+_lickSlugButton = NodePath("GridContainer/LickButton")
+_slugSimulatorButton = NodePath("GridContainer/SimulateButton")
 
 [node name="Background Image" type="Sprite2D" parent="."]
 position = Vector2(479, 251)
