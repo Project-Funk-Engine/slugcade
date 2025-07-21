@@ -33,7 +33,7 @@ public partial class TheSack : CharacterBody2D
         if (collision.GetCollider() is not StaticBody2D)
         {
             Footed?.Invoke();
-            _direction.X += (float)GD.RandRange(-.5f, .5f); //Add some variance
+            _direction.X *= (float)GD.RandRange(0.9, 1.25f); //Add some variance
         }
 
         _direction = collision.GetNormal().Y != 0 ? new Vector2(_direction.X, _direction.Y * -1) : new Vector2(_direction.X * -1, _direction.Y);
@@ -55,6 +55,7 @@ public partial class TheSack : CharacterBody2D
     private void RandomizeDir()
     {
         _direction = new Vector2( (float)GD.RandRange(-1.0, 1.0), (float)GD.RandRange(-1.0, 1.0));
+        _direction.X = (float)GD.RandRange(0.4, 1.0) * Math.Sign(_direction.X);
         _direction = _direction.Normalized();
     }
 }
