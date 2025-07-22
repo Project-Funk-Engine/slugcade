@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://nd7ukwmx7jhi"]
+[gd_scene load_steps=8 format=3 uid="uid://nd7ukwmx7jhi"]
 
 [ext_resource type="Script" uid="uid://b1wukt21q1qto" path="res://TitleScreen/TitleScreen.cs" id="1_uidrc"]
 [ext_resource type="Shader" path="res://TitleScreen/TitleScreen.gdshader" id="2_g0pfn"]
 [ext_resource type="Texture2D" uid="uid://bxpt4mxljf63r" path="res://TitleScreen/TitleText.png" id="3_ntd8f"]
 [ext_resource type="Texture2D" uid="uid://dw130vfo0kjis" path="res://TitleScreen/TitleScreen Background.jpg" id="3_ufa0f"]
 [ext_resource type="AudioStream" uid="uid://dtbtwlbcaw5dt" path="res://TitleScreen/251461__joshuaempyre__arcade-music-loop.wav" id="3_uidrc"]
+[ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="4_lawj5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ntd8f"]
 shader = ExtResource("2_g0pfn")
@@ -16,10 +17,22 @@ shader_parameter/chromatic_aberration_direction = Vector2(1, 0)
 
 [node name="TitleScreen" type="Node2D" node_paths=PackedStringArray("_fortunateSlugButton", "_hackySlugButton", "_lickSlugButton", "_slugSimulatorButton")]
 script = ExtResource("1_uidrc")
-_fortunateSlugButton = NodePath("GridContainer/FortunateButton")
-_hackySlugButton = NodePath("GridContainer/HackyButton")
-_lickSlugButton = NodePath("GridContainer/LickButton")
-_slugSimulatorButton = NodePath("GridContainer/SimulateButton")
+_fortunateSlugButton = NodePath("GridRoot/CenterContainer/GridContainer/FortunateButton")
+_hackySlugButton = NodePath("GridRoot/CenterContainer/GridContainer/HackyButton")
+_lickSlugButton = NodePath("GridRoot/CenterContainer/GridContainer/LickButton")
+_slugSimulatorButton = NodePath("GridRoot/CenterContainer/GridContainer/SimulateButton")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CRT Shader" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ntd8f")
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 21.0
+offset_bottom = 32.0
+scale = Vector2(25.0582, 14.1751)
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
 
 [node name="Background Image" type="Sprite2D" parent="."]
 position = Vector2(479, 251)
@@ -30,43 +43,57 @@ texture = ExtResource("3_ufa0f")
 position = Vector2(509, 90)
 texture = ExtResource("3_ntd8f")
 
-[node name="GridContainer" type="GridContainer" parent="."]
-offset_left = 172.0
-offset_top = 278.0
-offset_right = 537.0
-offset_bottom = 360.0
-scale = Vector2(1.6911, 2.53947)
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
-columns = 3
-
-[node name="FortunateButton" type="Button" parent="GridContainer"]
-layout_mode = 2
-text = "Fortunate Slug"
-
-[node name="HackyButton" type="Button" parent="GridContainer"]
-layout_mode = 2
-text = "Hacky Sack"
-
-[node name="LickButton" type="Button" parent="GridContainer"]
-layout_mode = 2
-text = "Lick The Slug"
-
-[node name="SimulateButton" type="Button" parent="GridContainer"]
-layout_mode = 2
-text = "Slug Simulator"
-
-[node name="CRT Shader" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_ntd8f")
-offset_left = -19.0
-offset_top = -8.0
-offset_right = 21.0
-offset_bottom = 32.0
-scale = Vector2(25.0582, 14.1751)
-mouse_filter = 2
-color = Color(1, 1, 1, 0)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uidrc")
 volume_db = -16.155
 autoplay = true
+
+[node name="GridRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 100.0
+offset_right = 480.0
+offset_bottom = 370.0
+scale = Vector2(2, 2)
+
+[node name="CenterContainer" type="CenterContainer" parent="GridRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridRoot/CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="FortunateButton" type="Button" parent="GridRoot/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(125, 15)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_lawj5")
+theme_override_font_sizes/font_size = 20
+text = "Fortunate Slug"
+
+[node name="HackyButton" type="Button" parent="GridRoot/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(125, 15)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_lawj5")
+theme_override_font_sizes/font_size = 20
+text = "Hacky Sack"
+
+[node name="LickButton" type="Button" parent="GridRoot/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(125, 15)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_lawj5")
+theme_override_font_sizes/font_size = 20
+text = "Lick The Slug"
+
+[node name="SimulateButton" type="Button" parent="GridRoot/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(125, 15)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_lawj5")
+theme_override_font_sizes/font_size = 20
+text = "Slug Simulator"
