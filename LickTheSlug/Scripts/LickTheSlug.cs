@@ -49,9 +49,11 @@ public partial class LickTheSlug : Node2D
         _lickSound.Play();
     }
 
+    [Export]
+    private GameEnd _gameEnd;
     private void TimesUp()
     {
-        GD.Print("Time's up, going home");
-        GetTree().ChangeSceneToFile("res://TitleScreen/TitleScreen.tscn");
+        _gameEnd.Visible = true;
+        GetTree().Paused = true;
     }
 }

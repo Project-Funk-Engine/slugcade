@@ -13,6 +13,7 @@ public partial class TitleScreen : Node2D
 
     public override void _Ready()
     {
+        _fortunateSlugButton.GrabFocus();
         _buttonSceneMap = new Dictionary<Button, string>
         {
             { _fortunateSlugButton, "res://FortunateSlug/FortunateSlug.tscn" },

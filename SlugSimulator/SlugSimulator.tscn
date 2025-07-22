@@ -1,16 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnovn1bqtuwpg"]
+[gd_scene load_steps=7 format=3 uid="uid://cnovn1bqtuwpg"]
 
 [ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="1_pqebb"]
 [ext_resource type="Script" uid="uid://mg7twywgp3ja" path="res://SlugSimulator/Scripts/SlugSimulator.cs" id="1_woy7n"]
+[ext_resource type="PackedScene" uid="uid://cld6lpt2s7xht" path="res://Common/GameEnd.tscn" id="2_pehlh"]
 [ext_resource type="Texture2D" uid="uid://caet0xrc0eexg" path="res://LickTheSlug/LickBG.png" id="2_woy7n"]
 [ext_resource type="Texture2D" uid="uid://nxgbkrl3t1df" path="res://LickTheSlug/Slug.png" id="4_g2enq"]
 [ext_resource type="Script" uid="uid://d3pkhmy0u7da1" path="res://SlugSimulator/Scripts/ControllableSlug.cs" id="5_g2enq"]
 
-[node name="SlugSimulator" type="Node2D" node_paths=PackedStringArray("_timeLeftLabel", "_timer", "_message")]
+[node name="SlugSimulator" type="Node2D" node_paths=PackedStringArray("_timeLeftLabel", "_timer", "_message", "_gameEnd")]
 script = ExtResource("1_woy7n")
 _timeLeftLabel = NodePath("UI/CenterContainer/VBoxContainer/Timer")
 _timer = NodePath("Timer")
 _message = NodePath("UI/Message")
+_gameEnd = NodePath("GameEnd")
+
+[node name="GameEnd" parent="." instance=ExtResource("2_pehlh")]
+visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 59.0

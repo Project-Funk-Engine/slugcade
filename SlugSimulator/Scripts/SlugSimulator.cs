@@ -27,10 +27,12 @@ public partial class SlugSimulator : Node2D
         _timeLeftLabel.Text = "00:" + _timer.TimeLeft.ToString("00");
     }
     
+    [Export]
+    private GameEnd _gameEnd;
     private void TimesUp()
     {
-        GD.Print("Time's up, going home");
-        GetTree().ChangeSceneToFile("res://TitleScreen/TitleScreen.tscn");
+        _gameEnd.Visible = true;
+        GetTree().Paused = true;
     }
 
     private int _frameTimer = 0;

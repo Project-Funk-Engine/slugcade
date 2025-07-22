@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlmxtxdfmus0x"]
+[gd_scene load_steps=14 format=3 uid="uid://dlmxtxdfmus0x"]
 
 [ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="1_8ox3o"]
 [ext_resource type="Texture2D" uid="uid://caet0xrc0eexg" path="res://LickTheSlug/LickBG.png" id="1_dnurs"]
 [ext_resource type="AudioStream" uid="uid://dqfwkl8fgc8js" path="res://HackySack/HackyNoise.wav" id="1_nay07"]
 [ext_resource type="Script" uid="uid://c18mii0n7qx2i" path="res://HackySack/Scripts/HackySack.cs" id="1_s22y3"]
+[ext_resource type="PackedScene" uid="uid://cld6lpt2s7xht" path="res://Common/GameEnd.tscn" id="2_feqrw"]
 [ext_resource type="Texture2D" uid="uid://dq76eeg4fdcfy" path="res://HackySack/Feet.png" id="3_il8mc"]
 [ext_resource type="Texture2D" uid="uid://d1xafa2unfxtd" path="res://HackySack/HackySack.png" id="4_pxo2j"]
 [ext_resource type="Script" uid="uid://8miqbpwjpoak" path="res://HackySack/Scripts/TheSack.cs" id="5_06w52"]
@@ -21,7 +22,7 @@ size = Vector2(33, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf4w0"]
 size = Vector2(987, 180)
 
-[node name="HackySack" type="Node2D" node_paths=PackedStringArray("_hackySound", "_timeLeftLabel", "_scoreLabel", "_timer", "_message", "_theSack", "_theFoot", "_otherFoot")]
+[node name="HackySack" type="Node2D" node_paths=PackedStringArray("_hackySound", "_timeLeftLabel", "_scoreLabel", "_timer", "_message", "_theSack", "_theFoot", "_otherFoot", "_gameEnd")]
 script = ExtResource("1_s22y3")
 _hackySound = NodePath("HackySound")
 _timeLeftLabel = NodePath("UI/CenterContainer/VBoxContainer/Timer")
@@ -31,6 +32,10 @@ _message = NodePath("UI/Label")
 _theSack = NodePath("TheSack")
 _theFoot = NodePath("PlayerFeet")
 _otherFoot = NodePath("AutoFeet")
+_gameEnd = NodePath("GameEnd")
+
+[node name="GameEnd" parent="." instance=ExtResource("2_feqrw")]
+visible = false
 
 [node name="BG(Replace This Later)" type="TextureRect" parent="."]
 offset_right = 960.0

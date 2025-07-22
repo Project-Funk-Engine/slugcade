@@ -48,10 +48,12 @@ public partial class HackySack : Node2D
         _timeLeftLabel.Text = "00:" + _timer.TimeLeft.ToString("00");
     }
     
+    [Export]
+    private GameEnd _gameEnd;
     private void TimesUp()
     {
-        ProcessMode = ProcessModeEnum.Disabled;
-        GD.Print("Time's up, pausing scene for now!");
+        _gameEnd.Visible = true;
+        GetTree().Paused = true;
     }
 
     private string[] _messages = ["Nice.", "Keep it up!", "Go for 100!"];
