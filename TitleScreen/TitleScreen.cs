@@ -8,6 +8,7 @@ public partial class TitleScreen : Node2D
     [Export] private Button _hackySlugButton;
     [Export] private Button _lickSlugButton;
     [Export] private Button _slugSimulatorButton;
+    [Export] private Button _snakeButton;
 
     private Dictionary<Button, string> _buttonSceneMap;
 
@@ -19,7 +20,8 @@ public partial class TitleScreen : Node2D
             { _fortunateSlugButton, "res://FortunateSlug/FortunateSlug.tscn" },
             { _hackySlugButton, "res://HackySack/HackySack.tscn" },
             { _lickSlugButton, "res://LickTheSlug/LickTheSlug.tscn" },
-            { _slugSimulatorButton, "res://SlugSimulator/SlugSimulator.tscn" }
+            { _slugSimulatorButton, "res://SlugSimulator/SlugSimulator.tscn" },
+            { _snakeButton, "res://Snake/Snake.tscn" }
         };
 
         foreach (var pair in _buttonSceneMap)

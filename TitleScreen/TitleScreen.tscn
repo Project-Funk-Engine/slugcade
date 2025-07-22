@@ -15,12 +15,13 @@ shader_parameter/scanline_intensity = 0.5
 shader_parameter/chromatic_aberration_strength = 0.005
 shader_parameter/chromatic_aberration_direction = Vector2(1, 0)
 
-[node name="TitleScreen" type="Node2D" node_paths=PackedStringArray("_fortunateSlugButton", "_hackySlugButton", "_lickSlugButton", "_slugSimulatorButton")]
+[node name="TitleScreen" type="Node2D" node_paths=PackedStringArray("_fortunateSlugButton", "_hackySlugButton", "_lickSlugButton", "_slugSimulatorButton", "_snakeButton")]
 script = ExtResource("1_uidrc")
 _fortunateSlugButton = NodePath("GridRoot/CenterContainer/GridContainer/FortunateButton")
 _hackySlugButton = NodePath("GridRoot/CenterContainer/GridContainer/HackyButton")
 _lickSlugButton = NodePath("GridRoot/CenterContainer/GridContainer/LickButton")
 _slugSimulatorButton = NodePath("GridRoot/CenterContainer/GridContainer/SimulateButton")
+_snakeButton = NodePath("GridRoot/CenterContainer/GridContainer/SnakeButton")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -97,3 +98,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_lawj5")
 theme_override_font_sizes/font_size = 20
 text = "Slug Simulator"
+
+[node name="SnakeButton" type="Button" parent="GridRoot/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Slug Snake"
