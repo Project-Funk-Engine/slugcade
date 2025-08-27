@@ -100,5 +100,15 @@ theme_override_font_sizes/font_size = 20
 text = "Slug Simulator"
 
 [node name="SnakeButton" type="Button" parent="GridRoot/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(125, 15)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_lawj5")
+theme_override_font_sizes/font_size = 20
 text = "Slug Snake"
+
+[node name="SnakeButton2" type="Button" parent="GridRoot/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(125, 15)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_lawj5")
+theme_override_font_sizes/font_size = 20
+text = "Hell Hole (WIP)"
