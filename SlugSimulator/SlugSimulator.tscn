@@ -25,8 +25,10 @@ autostart = true
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
-offset_right = 960.0
-offset_bottom = 86.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 77.0
+grow_horizontal = 2
 mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
@@ -35,13 +37,13 @@ layout_mode = 2
 [node name="Title" type="Label" parent="UI/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_pqebb")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "Slug Simulator"
 
 [node name="Timer" type="Label" parent="UI/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_pqebb")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "00:59"
 horizontal_alignment = 1
 
@@ -58,8 +60,8 @@ theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="BG" type="TextureRect" parent="."]
-offset_right = 960.0
-offset_bottom = 540.0
+offset_right = 1280.0
+offset_bottom = 720.0
 texture = ExtResource("2_woy7n")
 
 [node name="Slug" type="Sprite2D" parent="."]

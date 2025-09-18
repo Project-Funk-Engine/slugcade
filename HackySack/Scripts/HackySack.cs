@@ -19,7 +19,7 @@ public partial class HackySack : Node2D
     [Export]
     private PlayerFeet _theFoot;
     [Export] private CharacterBody2D _otherFoot;
-    private float _otherFootSpeed = 200f;
+    private float _otherFootSpeed = 225f;
     private float _otherFootSize = 15;
     
     public override void _EnterTree()

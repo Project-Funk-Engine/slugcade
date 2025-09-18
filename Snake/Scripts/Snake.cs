@@ -8,6 +8,11 @@ public partial class Snake : Node2D
     [Export] private Label _scoreLabel;
     [Export] private float _baseTps = 10f;
     
+    [Export]
+    private Label _timeLeftLabel;
+    [Export]
+    private Timer _timer;
+    
     private List<Sprite2D> _slugParts = [];
     private Vector2 _direction = Vector2.Right;
     private Queue<Vector2> _inputBuffer = new Queue<Vector2>();
@@ -25,6 +30,11 @@ public partial class Snake : Node2D
     private Texture2D _headTexture = GD.Load<Texture2D>("res://Snake/sprites/Slug.png");
     private Texture2D _bodyTexture = GD.Load<Texture2D>("res://Snake/sprites/SlugBody.png");
 
+    public override void _EnterTree()
+    {
+        _timer.Timeout += GameOver;
+    }
+    
     public override void _Ready()
     {
         // Get screen bounds and center position
@@ -57,7 +67,8 @@ public partial class Snake : Node2D
     {
         if (_gameOver)
             return;
-            
+
+        TimerToText();
         _tickTimer += delta;
         if (_tickTimer >= 1.0 / _baseTps)
         {
@@ -134,12 +145,14 @@ public partial class Snake : Node2D
             SpawnPickup();
         }
     }
-
+    
+    [Export]
+    private GameEnd _gameEnd;
     private void GameOver()
     {
         _gameOver = true;
-        var timer = GetTree().CreateTimer(2.0f);
-        timer.Timeout += () => GetTree().ChangeSceneToFile("res://TitleScreen/TitleScreen.tscn");
+        _gameEnd.Visible = true;
+        GetTree().Paused = true;
     }
     
     private void AddBodyPart()
@@ -187,6 +200,11 @@ public partial class Snake : Node2D
         {
             _scoreLabel.Text = $"Score: {_score}";
         }
+    }
+    
+    private void TimerToText()
+    {
+        _timeLeftLabel.Text = "00:" + _timer.TimeLeft.ToString("00");
     }
 
     public override void _Input(InputEvent @event)

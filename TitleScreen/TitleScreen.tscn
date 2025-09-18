@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://nd7ukwmx7jhi"]
+[gd_scene load_steps=14 format=3 uid="uid://nd7ukwmx7jhi"]
 
 [ext_resource type="Script" uid="uid://b1wukt21q1qto" path="res://TitleScreen/TitleScreen.cs" id="1_uidrc"]
 [ext_resource type="Shader" uid="uid://c24kwaabn8wdb" path="res://TitleScreen/TitleScreen.gdshader" id="2_g0pfn"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dw130vfo0kjis" path="res://TitleScreen/TitleScreen Background.jpg" id="3_ufa0f"]
 [ext_resource type="AudioStream" uid="uid://dtbtwlbcaw5dt" path="res://TitleScreen/251461__joshuaempyre__arcade-music-loop.wav" id="3_uidrc"]
 [ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="4_lawj5"]
+[ext_resource type="SpriteFrames" uid="uid://djvdnxolrvgcf" path="res://TitleScreen/Games/GameAnimationsFrames.tres" id="7_4x3tk"]
+[ext_resource type="Script" uid="uid://d0cey1yvlliqu" path="res://TitleScreen/GameTurnTable.cs" id="7_70hon"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ntd8f"]
 shader = ExtResource("2_g0pfn")
@@ -15,13 +17,173 @@ shader_parameter/scanline_intensity = 0.5
 shader_parameter/chromatic_aberration_strength = 0.005
 shader_parameter/chromatic_aberration_direction = Vector2(1, 0)
 
-[node name="TitleScreen" type="Node2D" node_paths=PackedStringArray("_fortunateSlugButton", "_hackySlugButton", "_lickSlugButton", "_slugSimulatorButton", "_snakeButton")]
+[sub_resource type="Animation" id="Animation_70hon"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentGame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 480)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PrevGame:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-130, 480)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NextGame:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1410, 480)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SlideIn:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2180, 480)]
+}
+
+[sub_resource type="Animation" id="Animation_4x3tk"]
+resource_name = "GameSlides"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentGame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 480), Vector2(-130, 480)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NextGame:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1410, 480), Vector2(640, 480)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SlideIn:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2180, 480), Vector2(1410, 480)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PrevGame:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-130, 480), Vector2(-900, 480)]
+}
+
+[sub_resource type="Animation" id="Animation_j3fyg"]
+resource_name = "GameSlidesRev"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentGame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 480), Vector2(1410, 480)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NextGame:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1410, 480), Vector2(2180, 480)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SlideIn:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-900, 480), Vector2(-130, 480)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PrevGame:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-130, 480), Vector2(640, 480)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_70hon"]
+_data = {
+&"GameSlidesFor": SubResource("Animation_4x3tk"),
+&"GameSlidesRev": SubResource("Animation_j3fyg"),
+&"RESET": SubResource("Animation_70hon")
+}
+
+[node name="TitleScreen" type="Node2D" node_paths=PackedStringArray("_gameTurnTable")]
 script = ExtResource("1_uidrc")
-_fortunateSlugButton = NodePath("GridRoot/CenterContainer/GridContainer/FortunateButton")
-_hackySlugButton = NodePath("GridRoot/CenterContainer/GridContainer/HackyButton")
-_lickSlugButton = NodePath("GridRoot/CenterContainer/GridContainer/LickButton")
-_slugSimulatorButton = NodePath("GridRoot/CenterContainer/GridContainer/SimulateButton")
-_snakeButton = NodePath("GridRoot/CenterContainer/GridContainer/SnakeButton")
+_gameTurnTable = NodePath("GameTurnTable")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -29,19 +191,19 @@ _snakeButton = NodePath("GridRoot/CenterContainer/GridContainer/SnakeButton")
 material = SubResource("ShaderMaterial_ntd8f")
 offset_left = -19.0
 offset_top = -8.0
-offset_right = 21.0
-offset_bottom = 32.0
+offset_right = 36.0
+offset_bottom = 53.0
 scale = Vector2(25.0582, 14.1751)
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="Background Image" type="Sprite2D" parent="."]
-position = Vector2(479, 251)
-scale = Vector2(1.48909, 1.87611)
+position = Vector2(617.597, 390.65)
+scale = Vector2(1.58698, 2.42417)
 texture = ExtResource("3_ufa0f")
 
 [node name="Title Text" type="Sprite2D" parent="."]
-position = Vector2(509, 90)
+position = Vector2(640, 115)
 texture = ExtResource("3_ntd8f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -50,11 +212,13 @@ volume_db = -16.155
 autoplay = true
 
 [node name="GridRoot" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_top = 100.0
-offset_right = 480.0
-offset_bottom = 370.0
+offset_left = -1373.0
+offset_top = 167.0
+offset_right = -733.0
+offset_bottom = 567.0
 scale = Vector2(2, 2)
 
 [node name="CenterContainer" type="CenterContainer" parent="GridRoot"]
@@ -112,3 +276,53 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_lawj5")
 theme_override_font_sizes/font_size = 20
 text = "Hell Hole (WIP)"
+
+[node name="GameTurnTable" type="Node2D" parent="." node_paths=PackedStringArray("_animatedSprites", "_animationPlayer", "_currentGame", "_nextGame", "_prevGame", "_slideInGame")]
+script = ExtResource("7_70hon")
+_animatedSprites = [NodePath("CurrentGame/SlugTar"), NodePath("NextGame/SlugSimulator"), NodePath("SlideIn/LickTheSlug"), NodePath("PrevGame/SlugSnake")]
+_animationPlayer = NodePath("AnimationPlayer")
+_currentGame = NodePath("CurrentGame")
+_nextGame = NodePath("NextGame")
+_prevGame = NodePath("PrevGame")
+_slideInGame = NodePath("SlideIn")
+
+[node name="CurrentGame" type="Marker2D" parent="GameTurnTable"]
+position = Vector2(640, 480)
+
+[node name="SlugTar" type="AnimatedSprite2D" parent="GameTurnTable/CurrentGame"]
+scale = Vector2(7, 7)
+sprite_frames = ExtResource("7_4x3tk")
+animation = &"SlugTar"
+frame_progress = 0.7696
+
+[node name="PrevGame" type="Marker2D" parent="GameTurnTable"]
+position = Vector2(-130, 480)
+
+[node name="SlugSnake" type="AnimatedSprite2D" parent="GameTurnTable/PrevGame"]
+scale = Vector2(7, 7)
+sprite_frames = ExtResource("7_4x3tk")
+animation = &"SlugSnake"
+frame_progress = 0.906824
+
+[node name="NextGame" type="Marker2D" parent="GameTurnTable"]
+position = Vector2(1410, 480)
+
+[node name="SlugSimulator" type="AnimatedSprite2D" parent="GameTurnTable/NextGame"]
+scale = Vector2(7, 7)
+sprite_frames = ExtResource("7_4x3tk")
+animation = &"SlugSim"
+frame_progress = 0.492554
+
+[node name="SlideIn" type="Marker2D" parent="GameTurnTable"]
+position = Vector2(2180, 480)
+
+[node name="LickTheSlug" type="AnimatedSprite2D" parent="GameTurnTable/SlideIn"]
+scale = Vector2(7, 7)
+sprite_frames = ExtResource("7_4x3tk")
+animation = &"LickTheSlug"
+frame_progress = 0.567812
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameTurnTable"]
+libraries = {
+&"": SubResource("AnimationLibrary_70hon")
+}

@@ -4,33 +4,29 @@ using System.Collections.Generic;
 
 public partial class TitleScreen : Node2D
 {
-    [Export] private Button _fortunateSlugButton;
-    [Export] private Button _hackySlugButton;
-    [Export] private Button _lickSlugButton;
-    [Export] private Button _slugSimulatorButton;
-    [Export] private Button _snakeButton;
 
-    private Dictionary<Button, string> _buttonSceneMap;
+    [Export] private GameTurnTable _gameTurnTable;
+
+    private string[] _buttonSceneMap;
 
     public override void _Ready()
     {
-        _fortunateSlugButton.GrabFocus();
-        _buttonSceneMap = new Dictionary<Button, string>
+        _buttonSceneMap = new string[]
         {
-            { _fortunateSlugButton, "res://FortunateSlug/FortunateSlug.tscn" },
-            { _hackySlugButton, "res://HackySack/HackySack.tscn" },
-            { _lickSlugButton, "res://LickTheSlug/LickTheSlug.tscn" },
-            { _slugSimulatorButton, "res://SlugSimulator/SlugSimulator.tscn" },
-            { _snakeButton, "res://Snake/Snake.tscn" }
+            "res://FortunateSlug/FortunateSlug.tscn",
+            "res://SlugSimulator/SlugSimulator.tscn",
+            "res://LickTheSlug/LickTheSlug.tscn",
+            "res://HackySack/HackySack.tscn",
+            "res://Snake/Snake.tscn"
         };
-
-        foreach (var pair in _buttonSceneMap)
-            pair.Key.Pressed += () => OnGameButtonPressed(pair.Key);
+        
     }
 
-    private void OnGameButtonPressed(Button button)
+    public override void _Input(InputEvent @event)
     {
-        if (_buttonSceneMap.TryGetValue(button, out var scenePath))
-            GetTree().ChangeSceneToFile(scenePath);
+        if (@event.IsActionPressed("ButtonA"))
+        {
+            GetTree().ChangeSceneToFile( _buttonSceneMap[_gameTurnTable.GetCurrentSelection()]);
+        }
     }
 }

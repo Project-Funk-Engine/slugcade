@@ -4,7 +4,7 @@ using System;
 public partial class TheSack : CharacterBody2D
 {
     private Vector2 _direction;
-    private float _speed = 250;
+    private float _speed = 400;
     
     public delegate void FootedHandler();
     public event FootedHandler Footed;
@@ -44,7 +44,7 @@ public partial class TheSack : CharacterBody2D
 
     private void CheckOOB()
     {
-        if (Position.X > 960 || Position.X < 0 || Position.Y < 0 || Position.Y > 540)
+        if (Position.X > 1280 || Position.X < 0 || Position.Y < 0 || Position.Y > 720)
         {
             OOB?.Invoke();
             Position = new Vector2(960f/2, 540f/2);

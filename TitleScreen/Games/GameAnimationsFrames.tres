@@ -1,0 +1,195 @@
+[gd_resource type="SpriteFrames" load_steps=41 format=3 uid="uid://djvdnxolrvgcf"]
+
+[ext_resource type="Texture2D" uid="uid://c7nx30nw1kjvf" path="res://TitleScreen/Games/SlugSnake/Snake 1.svg" id="1_i4lgj"]
+[ext_resource type="Texture2D" uid="uid://j73l7hcufb0x" path="res://TitleScreen/Games/HackySack/Hacky 1.svg" id="1_rukbm"]
+[ext_resource type="Texture2D" uid="uid://bxar51bxw665d" path="res://TitleScreen/Games/SlugSnake/Snake 2.svg" id="2_tqi7g"]
+[ext_resource type="Texture2D" uid="uid://j4a6grri16kk" path="res://TitleScreen/Games/HackySack/Hacky 2.svg" id="2_w5tfx"]
+[ext_resource type="Texture2D" uid="uid://dpca3mmr1cgsn" path="res://TitleScreen/Games/HackySack/Hacky 3.svg" id="3_fn0fr"]
+[ext_resource type="Texture2D" uid="uid://0apmesfclo38" path="res://TitleScreen/Games/SlugSnake/Snake 3.svg" id="3_tte8o"]
+[ext_resource type="Texture2D" uid="uid://cwju2ip7caa2q" path="res://TitleScreen/Games/HackySack/Hacky 4.svg" id="4_hn1nc"]
+[ext_resource type="Texture2D" uid="uid://c8mqov0p37rew" path="res://TitleScreen/Games/SlugSnake/Snake 4.svg" id="4_kuj3n"]
+[ext_resource type="Texture2D" uid="uid://c8pxk4cjoketg" path="res://TitleScreen/Games/HackySack/Hacky 5.svg" id="5_a7kiv"]
+[ext_resource type="Texture2D" uid="uid://bsl6wy6vyat4p" path="res://TitleScreen/Games/SlugSnake/Snake 5.svg" id="5_ou8ng"]
+[ext_resource type="Texture2D" uid="uid://c2ftm3643s8vv" path="res://TitleScreen/Games/SlugSnake/Snake 6.svg" id="6_defx0"]
+[ext_resource type="Texture2D" uid="uid://x34dh862ctk" path="res://TitleScreen/Games/HackySack/Hacky 6.svg" id="6_uq7f6"]
+[ext_resource type="Texture2D" uid="uid://t7vhhrsbitmt" path="res://TitleScreen/Games/HackySack/Hacky 7.svg" id="7_2v3gu"]
+[ext_resource type="Texture2D" uid="uid://d1rbrldkty8dc" path="res://TitleScreen/Games/SlugSnake/Snake 7.svg" id="7_h18n5"]
+[ext_resource type="Texture2D" uid="uid://byyivkv7nma3u" path="res://TitleScreen/Games/HellHole/HellHole1.svg" id="8_bka1y"]
+[ext_resource type="Texture2D" uid="uid://b44dovfc5edr2" path="res://TitleScreen/Games/SlugSnake/Snake 8.svg" id="8_v3ok2"]
+[ext_resource type="Texture2D" uid="uid://dodwim183tx88" path="res://TitleScreen/Games/HellHole/HellHole2.svg" id="9_bbfuv"]
+[ext_resource type="Texture2D" uid="uid://cpht8t0dsprhk" path="res://TitleScreen/Games/SlugSnake/Snake 9.svg" id="9_lsbsn"]
+[ext_resource type="Texture2D" uid="uid://nwip38tg7lxl" path="res://TitleScreen/Games/LickSlug/LickFinal1.svg" id="10_33ek5"]
+[ext_resource type="Texture2D" uid="uid://xnm47waljf2e" path="res://TitleScreen/Games/SlugSnake/Snake 10.svg" id="10_o52ss"]
+[ext_resource type="Texture2D" uid="uid://dd57jgd8oi2p4" path="res://TitleScreen/Games/LickSlug/LickFinal2.svg" id="11_8niy2"]
+[ext_resource type="Texture2D" uid="uid://b0r6dy5myufmv" path="res://TitleScreen/Games/SlugSnake/Snake 11.svg" id="11_r8c1a"]
+[ext_resource type="Texture2D" uid="uid://xo24ovcoojqo" path="res://TitleScreen/Games/SlugSnake/Snake 12.svg" id="12_6l6in"]
+[ext_resource type="Texture2D" uid="uid://cm6jl484271pt" path="res://TitleScreen/Games/SlugSim/SlugSimFinal 1.svg" id="12_laytf"]
+[ext_resource type="Texture2D" uid="uid://byxklqk56mpjo" path="res://TitleScreen/Games/SlugSim/SlugSimFinal 2.svg" id="13_4s52g"]
+[ext_resource type="Texture2D" uid="uid://bpkhbhq3lwje2" path="res://TitleScreen/Games/SlugSnake/Snake 13.svg" id="13_uv0il"]
+[ext_resource type="Texture2D" uid="uid://bhiqqyyqymibu" path="res://TitleScreen/Games/SlugSim/SlugSimFinal 3.svg" id="14_lkubg"]
+[ext_resource type="Texture2D" uid="uid://vpdg2oh6euar" path="res://TitleScreen/Games/SlugSnake/Snake 14.svg" id="14_rr85i"]
+[ext_resource type="Texture2D" uid="uid://b87nq6b27um3l" path="res://TitleScreen/Games/SlugSim/SlugSimFinal 4.svg" id="15_1b5gm"]
+[ext_resource type="Texture2D" uid="uid://b8kgxo8eac7mo" path="res://TitleScreen/Games/SlugSnake/Snake 15.svg" id="15_useql"]
+[ext_resource type="Texture2D" uid="uid://cjmt03aoybhh8" path="res://TitleScreen/Games/SlugSnake/Snake 16.svg" id="16_0uj8l"]
+[ext_resource type="Texture2D" uid="uid://cxjug8tnwj82x" path="res://TitleScreen/Games/SlugSim/SlugSimFinal 5.svg" id="16_c3l8j"]
+[ext_resource type="Texture2D" uid="uid://ln7544mn62dj" path="res://TitleScreen/Games/SlugSnake/Snake 17.svg" id="17_nv51n"]
+[ext_resource type="Texture2D" uid="uid://donyquvbt6ubc" path="res://TitleScreen/Games/SlugSim/SlugSimFinal 6.svg" id="17_pmgbo"]
+[ext_resource type="Texture2D" uid="uid://divj45kghpiqc" path="res://TitleScreen/Games/SlugSnake/Snake 18.svg" id="18_rukbm"]
+[ext_resource type="Texture2D" uid="uid://dng8ohmdfertl" path="res://TitleScreen/Games/SlugSnake/Snake 19.svg" id="19_w5tfx"]
+[ext_resource type="Texture2D" uid="uid://dntko2vdfnmap" path="res://TitleScreen/Games/SlugSnake/Snake 20.svg" id="20_fn0fr"]
+[ext_resource type="Texture2D" uid="uid://5emv31twiare" path="res://TitleScreen/Games/SlugSnake/Snake 21.svg" id="21_hn1nc"]
+[ext_resource type="Texture2D" uid="uid://cqdw0mjqsdtyh" path="res://TitleScreen/Games/SlugtTar/Slugtar 1.svg" id="22_a7kiv"]
+[ext_resource type="Texture2D" uid="uid://cflfh6hua4nfj" path="res://TitleScreen/Games/SlugtTar/Slugtar 2.svg" id="23_uq7f6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rukbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w5tfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fn0fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hn1nc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a7kiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uq7f6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2v3gu")
+}],
+"loop": true,
+"name": &"HackySack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bka1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bbfuv")
+}],
+"loop": true,
+"name": &"HellHole",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_33ek5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8niy2")
+}],
+"loop": true,
+"name": &"LickTheSlug",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_laytf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4s52g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lkubg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1b5gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_c3l8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pmgbo")
+}],
+"loop": true,
+"name": &"SlugSim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i4lgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tqi7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tte8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kuj3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ou8ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_defx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h18n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v3ok2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lsbsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o52ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r8c1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6l6in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uv0il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rr85i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_useql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0uj8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nv51n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rukbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_w5tfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_fn0fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hn1nc")
+}],
+"loop": true,
+"name": &"SlugSnake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_a7kiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_uq7f6")
+}],
+"loop": true,
+"name": &"SlugTar",
+"speed": 5.0
+}]
