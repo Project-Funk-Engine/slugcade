@@ -31,6 +31,7 @@ public partial class GameTurnTable : Node2D
             sprite.Play();
         }
 
+        ResetAnimPaths();
         _animationPlayer.AnimationFinished += OnAnimFinished;
     }
 
@@ -88,4 +89,15 @@ public partial class GameTurnTable : Node2D
         _sliding = false;
         GD.Print("Current Selection is " + _animatedNames[_currentSelection]);
     }
+
+    private void ResetAnimPaths() //I feel like animation path changes shouldn't persist on reloading a scene. Workaround for now.
+    {
+        for (int i = 0; i < _animationPlayer.GetAnimation("Master").GetTrackCount(); i++)
+        {
+            NodePath path = _animationPlayer.GetAnimation("Master").TrackGetPath(i);
+            _animationPlayer.GetAnimation("GameSlidesRev").TrackSetPath(i, path);
+            _animationPlayer.GetAnimation("GameSlidesFor").TrackSetPath(i, path);
+        }
+    }
+
 }
