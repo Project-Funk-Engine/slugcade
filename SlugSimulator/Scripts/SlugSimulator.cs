@@ -37,7 +37,7 @@ public partial class SlugSimulator : Node2D
 
     private int _frameTimer = 0;
     private int _curMessage = 0;
-    private readonly string[] _messages = ["You are a slug!", "Press B to run!", "You can not run, for you are a slug.", 
+    private readonly string[] _messages = ["You are a slug!", "Press the blue button to run!", "You can not run, for you are a slug.", 
         "Enjoy the serenity.", "No classes, no legs, life is easy being a slug.", 
         "You are a slug, unfortunately you cannot join Slugworks.", "No legs :)", 
         "The weather is always good for a slug!", "Slugs can't play Midnight Riff (now on Steam) either, how sad.", 

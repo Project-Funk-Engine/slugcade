@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cld6lpt2s7xht"]
+[gd_scene load_steps=3 format=3 uid="uid://dr6n48r7hb8d5"]
 
 [ext_resource type="Script" uid="uid://hfjew7ptc8ks" path="res://Common/GameEnd.cs" id="1_anlgt"]
 [ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="1_qydbg"]
@@ -38,5 +38,5 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qydbg")
 theme_override_font_sizes/font_size = 40
-text = "Press [B] To Return To Title Screen"
+text = "Press [Blue] To Return To Title Screen"
 horizontal_alignment = 1

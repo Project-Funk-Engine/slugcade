@@ -276,14 +276,16 @@ texture = ExtResource("3_ntd8f")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 503.5
-offset_top = 184.0
-offset_right = 776.5
-offset_bottom = 245.0
+offset_left = 106.0
+offset_top = 571.0
+offset_right = 1121.0
+offset_bottom = 696.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_lawj5")
-theme_override_font_sizes/font_size = 60
-text = "[B] Credits"
+theme_override_font_sizes/font_size = 53
+text = "      [Red]                                                                                [Blue]
+Select Game                                                                    Credits"
+horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uidrc")
