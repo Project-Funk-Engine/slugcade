@@ -1,12 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2huhyh1ywjd0"]
+[gd_scene load_steps=10 format=3 uid="uid://c2huhyh1ywjd0"]
 
 [ext_resource type="Script" uid="uid://depc63gbgwgfw" path="res://Credits/Credits.cs" id="1_0vace"]
+[ext_resource type="Shader" uid="uid://c24kwaabn8wdb" path="res://TitleScreen/TitleScreen.gdshader" id="1_cvm5q"]
 [ext_resource type="Texture2D" uid="uid://dw130vfo0kjis" path="res://TitleScreen/TitleScreen Background.jpg" id="2_q41j5"]
 [ext_resource type="Texture2D" uid="uid://bxpt4mxljf63r" path="res://TitleScreen/TitleText.png" id="3_0vace"]
 [ext_resource type="AudioStream" uid="uid://dtbtwlbcaw5dt" path="res://TitleScreen/251461__joshuaempyre__arcade-music-loop.wav" id="4_j7d6t"]
 [ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="5_62afx"]
 [ext_resource type="Texture2D" uid="uid://euwkp2k11og3" path="res://Credits/Slug_QR.png" id="6_0vace"]
 [ext_resource type="Texture2D" uid="uid://chdbwuavw0p3d" path="res://Credits/PFE_QR.png" id="6_q41j5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7d6t"]
+shader = ExtResource("1_cvm5q")
+shader_parameter/scanline_thickness = 2.0
+shader_parameter/scanline_speed = 0.1
+shader_parameter/scanline_intensity = 0.5
+shader_parameter/chromatic_aberration_strength = 0.005
+shader_parameter/chromatic_aberration_direction = Vector2(0.3, 0)
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_0vace")
@@ -150,3 +159,15 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("5_62afx")
 theme_override_font_sizes/font_size = 40
 text = "[B] Title Screen"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CRT Shader" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_j7d6t")
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 36.0
+offset_bottom = 53.0
+scale = Vector2(25.0582, 14.1751)
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
