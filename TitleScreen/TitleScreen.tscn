@@ -346,6 +346,7 @@ autostart = true
 ignore_time_scale = true
 
 [node name="Screensaver" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Screensaver"]
 material = SubResource("ShaderMaterial_mhd54")
