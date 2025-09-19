@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkosxd2bc8iav"]
+
+[ext_resource type="Script" uid="uid://dr1rqnipa8wws" path="res://rickroll/Rickroll.cs" id="1_ntwe6"]
+[ext_resource type="VideoStream" uid="uid://bt0m0tkq4w2bs" path="res://rickroll/Rick.ogv" id="1_o5hpu"]
+[ext_resource type="Shader" uid="uid://clm4qto8j7pwj" path="res://FortunateSlug/Pixelate.gdshader" id="2_leigs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntwe6"]
+shader = ExtResource("2_leigs")
+shader_parameter/pixel_size = 40
+shader_parameter/screen_size = Vector2(1280, 720)
+
+[node name="Rickroll" type="Node2D" node_paths=PackedStringArray("_videoPlayer")]
+script = ExtResource("1_ntwe6")
+_videoPlayer = NodePath("VideoStreamPlayer")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -172.0
+offset_top = -111.0
+offset_right = 1748.0
+offset_bottom = 969.0
+stream = ExtResource("1_o5hpu")
+autoplay = true
+expand = true
+
+[node name="pixelate" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ntwe6")
+offset_left = -31.0
+offset_top = -16.0
+offset_right = 1292.0
+offset_bottom = 731.0
