@@ -36,7 +36,7 @@ public partial class TitleScreen : Node2D
             GetTree().ChangeSceneToFile( _buttonSceneMap[_gameTurnTable.GetCurrentSelection()]);
         }
         
-        if (@event is not InputEventJoypadButton and not InputEventKey )
+        if (@event is not InputEventJoypadButton and not InputEventKey and not InputEventJoypadMotion)
         {
             return; // These are the only events that should reset the screensaver. Doing this bc I think the touch screen is causing issues
         }

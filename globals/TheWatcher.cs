@@ -6,7 +6,7 @@ public partial class TheWatcher : Node
 {
     public override void _Ready()
     {
-        if (Engine.IsEditorHint())
+        if (!OS.HasFeature("editor"))
         {
             Input.MouseMode = Input.MouseModeEnum.Hidden;
         }
