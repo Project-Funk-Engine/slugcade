@@ -209,32 +209,17 @@ public partial class Snake : Node2D
 
     public override void _Input(InputEvent @event)
     {
-        if (@event is not InputEventKey keyEvent || !keyEvent.Pressed) return;
-        
-        if (keyEvent.Keycode == Key.R)
-        {
-            GetTree().ReloadCurrentScene();
-            return;
-        }
-        
-        switch (keyEvent.Keycode)
-        {
-            case Key.W:
-            case Key.Up:
-                _inputBuffer.Enqueue(Vector2.Up);
-                break;
-            case Key.S:
-            case Key.Down:
-                _inputBuffer.Enqueue(Vector2.Down);
-                break;
-            case Key.A:
-            case Key.Left:
-                _inputBuffer.Enqueue(Vector2.Left);
-                break;
-            case Key.D:
-            case Key.Right:
-                _inputBuffer.Enqueue(Vector2.Right);
-                break;
-        }
+        //Manual Deadzone stuff
+        if (@event is InputEventJoypadMotion joypadMotion && Mathf.Abs(joypadMotion.AxisValue) < 0.9f) return; // Ignore small movements
+
+        if (@event.IsActionPressed("Up"))
+            _inputBuffer.Enqueue(Vector2.Up);
+        else if (@event.IsActionPressed("Down"))
+            _inputBuffer.Enqueue(Vector2.Down);
+        else if (@event.IsActionPressed("Left"))
+            _inputBuffer.Enqueue(Vector2.Left);
+        else if (@event.IsActionPressed("Right"))
+            _inputBuffer.Enqueue(Vector2.Right);
     }
 }
+
