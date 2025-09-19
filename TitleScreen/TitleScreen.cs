@@ -31,28 +31,26 @@ public partial class TitleScreen : Node2D
 
     public override void _Input(InputEvent @event)
     {
-        _timer.Start();
-
+        
+        if (!(@event is not InputEventJoypadButton and not InputEventKey and not InputEventJoypadMotion))
+        {
+            if (_isScreensaverActive)
+            {
+                _isScreensaverActive = false;
+                _audioStreamPlayer.Play();
+                _screensaverNode.Visible = false;
+            }  
+            _timer.Start();
+        }
+        
         if (@event.IsActionPressed("ButtonA") && !_isScreensaverActive)
         {
             GetTree().ChangeSceneToFile( _buttonSceneMap[_gameTurnTable.GetCurrentSelection()]);
         }
         
-        if (@event is not InputEventJoypadButton and not InputEventKey and not InputEventJoypadMotion)
-        {
-            return; // These are the only events that should reset the screensaver. Doing this bc I think the touch screen is causing issues
-        }
-        
         if (@event.IsActionPressed("Mute")) //Non-reversible, mainly to not go insane while testing.
         {
             AudioServer.SetBusMute(AudioServer.GetBusIndex("Master"), true);
-        }
-
-        if (_isScreensaverActive)
-        {
-            _isScreensaverActive = false;
-            _audioStreamPlayer.Play();
-            _screensaverNode.Visible = false;
         }
 
     }
