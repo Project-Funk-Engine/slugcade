@@ -1,0 +1,152 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2huhyh1ywjd0"]
+
+[ext_resource type="Script" uid="uid://depc63gbgwgfw" path="res://Credits/Credits.cs" id="1_0vace"]
+[ext_resource type="Texture2D" uid="uid://dw130vfo0kjis" path="res://TitleScreen/TitleScreen Background.jpg" id="2_q41j5"]
+[ext_resource type="Texture2D" uid="uid://bxpt4mxljf63r" path="res://TitleScreen/TitleText.png" id="3_0vace"]
+[ext_resource type="AudioStream" uid="uid://dtbtwlbcaw5dt" path="res://TitleScreen/251461__joshuaempyre__arcade-music-loop.wav" id="4_j7d6t"]
+[ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="5_62afx"]
+[ext_resource type="Texture2D" uid="uid://euwkp2k11og3" path="res://Credits/Slug_QR.png" id="6_0vace"]
+[ext_resource type="Texture2D" uid="uid://chdbwuavw0p3d" path="res://Credits/PFE_QR.png" id="6_q41j5"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_0vace")
+
+[node name="Background Image" type="Sprite2D" parent="."]
+position = Vector2(617.597, 390.65)
+scale = Vector2(1.58698, 2.42417)
+texture = ExtResource("2_q41j5")
+
+[node name="Title Text" type="Sprite2D" parent="."]
+position = Vector2(640, 82)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_0vace")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_j7d6t")
+volume_db = -16.155
+autoplay = true
+
+[node name="CreditsLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 482.5
+offset_top = 140.0
+offset_right = 797.5
+offset_bottom = 241.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_62afx")
+theme_override_font_sizes/font_size = 100
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="CheckOut" type="Label" parent="."]
+offset_left = 210.0
+offset_top = 440.0
+offset_right = 711.0
+offset_bottom = 693.0
+theme_override_fonts/font = ExtResource("5_62afx")
+theme_override_font_sizes/font_size = 50
+text = "Play our game 
+Midnight Riff
+on Steam!"
+horizontal_alignment = 1
+
+[node name="CheckOut2" type="Label" parent="."]
+offset_left = 884.0
+offset_top = 440.0
+offset_right = 1385.0
+offset_bottom = 693.0
+theme_override_fonts/font = ExtResource("5_62afx")
+theme_override_font_sizes/font_size = 50
+text = "Check them
+out, or visit,
+or else!"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -96.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="GameLabel" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_62afx")
+theme_override_font_sizes/font_size = 60
+text = "Game Design"
+horizontal_alignment = 1
+
+[node name="GameLabel2" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_62afx")
+theme_override_font_sizes/font_size = 60
+text = "Project Funk Engine"
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_q41j5")
+stretch_mode = 2
+
+[node name="Spacer" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_62afx")
+theme_override_font_sizes/font_size = 60
+text = "                      "
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="GameLabel" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_62afx")
+theme_override_font_sizes/font_size = 60
+text = "Cabinet Creation"
+horizontal_alignment = 1
+
+[node name="GameLabel2" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_62afx")
+theme_override_font_sizes/font_size = 60
+text = "Slugworks"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+texture = ExtResource("6_0vace")
+stretch_mode = 2
+
+[node name="CreditsLabel2" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 503.5
+offset_top = 682.0
+offset_right = 776.5
+offset_bottom = 743.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_62afx")
+theme_override_font_sizes/font_size = 40
+text = "[B] Title Screen"

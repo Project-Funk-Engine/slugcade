@@ -50,6 +50,9 @@ public partial class TitleScreen : Node2D
             GetTree().ChangeSceneToFile( _buttonSceneMap[_gameTurnTable.GetCurrentSelection()]);
         }
         
+        if(Input.IsActionJustPressed("ButtonB"))
+            GetTree().ChangeSceneToFile( "res://Credits/Credits.tscn");  
+        
         if (@event.IsActionPressed("Mute")) //Non-reversible, mainly to not go insane while testing.
         {
             AudioServer.SetBusMute(AudioServer.GetBusIndex("Master"), true);

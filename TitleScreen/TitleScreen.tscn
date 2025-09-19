@@ -272,6 +272,19 @@ texture = ExtResource("3_ufa0f")
 position = Vector2(640, 115)
 texture = ExtResource("3_ntd8f")
 
+[node name="CreditsLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 503.5
+offset_top = 184.0
+offset_right = 776.5
+offset_bottom = 245.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_lawj5")
+theme_override_font_sizes/font_size = 60
+text = "[B] Credits"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uidrc")
 volume_db = -16.155
