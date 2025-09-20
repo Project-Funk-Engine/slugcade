@@ -1,19 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://utre3oro2077"]
+[gd_scene load_steps=10 format=3 uid="uid://utre3oro2077"]
 
 [ext_resource type="Script" uid="uid://b440jofslskw0" path="res://FortunateSlug/Slugtar.cs" id="1_om2cr"]
 [ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="2_fvi0b"]
 [ext_resource type="Texture2D" uid="uid://y5eny6803xm1" path="res://FortunateSlug/SLUGTAR.jpg" id="3_1fto1"]
 [ext_resource type="Shader" uid="uid://clm4qto8j7pwj" path="res://FortunateSlug/Pixelate.gdshader" id="3_v7g45"]
 [ext_resource type="AudioStream" uid="uid://df62mjyoqfff7" path="res://FortunateSlug/ZoltarTheme.mp3" id="4_fvi0b"]
+[ext_resource type="AudioStream" uid="uid://bk8ck34l2sid6" path="res://FortunateSlug/bigSwitch.ogg" id="6_v7g45"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mau7l"]
 shader = ExtResource("3_v7g45")
 shader_parameter/pixel_size = 4
 shader_parameter/screen_size = Vector2(1280, 720)
 
-[node name="LickTheSlug" type="Node2D" node_paths=PackedStringArray("_outputLabel")]
+[sub_resource type="Gradient" id="Gradient_1fto1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.866667)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v7g45"]
+gradient = SubResource("Gradient_1fto1")
+
+[node name="Slugtar" type="Node2D" node_paths=PackedStringArray("_outputLabel", "_darkTexture", "_switchSound")]
 script = ExtResource("1_om2cr")
 _outputLabel = NodePath("UI/Slugtar output")
+_darkTexture = NodePath("TextureRect")
+_switchSound = NodePath("BigSwitch")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -39,7 +49,7 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("2_fvi0b")
 theme_override_font_sizes/font_size = 35
-text = "Slugtar Knows All!"
+text = "Slugtar Knows All! Press [Red] to know your future."
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -54,3 +64,15 @@ texture = ExtResource("3_1fto1")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fvi0b")
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -41.0
+offset_top = -23.0
+offset_right = 1313.0
+offset_bottom = 757.0
+texture = SubResource("GradientTexture1D_v7g45")
+
+[node name="BigSwitch" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-533, 580)
+stream = ExtResource("6_v7g45")

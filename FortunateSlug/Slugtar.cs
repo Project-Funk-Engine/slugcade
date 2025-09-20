@@ -5,15 +5,29 @@ public partial class Slugtar : Node2D
 {
     [Export]
     private Label _outputLabel;
+    [Export]
+    private TextureRect _darkTexture;
+    [Export]
+    private AudioStreamPlayer2D _switchSound;
+    
+    private bool _hasChosen = false;
     
     public override void _Input(InputEvent @event)
     {
-        if (@event.IsActionPressed("ButtonA"))
+        if (@event.IsActionPressed("ButtonA") && !_hasChosen)
         {
+            _hasChosen = true;
             _outputLabel.Text = GetRandFortune();
             
-            var timer = GetTree().CreateTimer(10.0f);
+            var timer = GetTree().CreateTimer(7.0f);
             timer.Timeout += () => GetTree().ChangeSceneToFile("res://TitleScreen/TitleScreen.tscn");
+            
+            var timer2 = GetTree().CreateTimer(5.0f);
+            timer2.Timeout += () =>
+            {
+                _darkTexture.Show();
+                _switchSound.Play();
+            };
         }
     }
     
