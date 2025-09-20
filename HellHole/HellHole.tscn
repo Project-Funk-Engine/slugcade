@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://do3jinnfccsjs"]
+[gd_scene load_steps=10 format=3 uid="uid://do3jinnfccsjs"]
 
 [ext_resource type="FontFile" uid="uid://digk2l351175t" path="res://Common/G.B.BOOT.ttf" id="1_nyld7"]
 [ext_resource type="Script" uid="uid://dl1r1phgaqi5l" path="res://HellHole/Scripts/HellHole.cs" id="1_v4aca"]
+[ext_resource type="AudioStream" uid="uid://ds5qh7asixqsy" path="res://HellHole/335571__magntron__gamemusic.mp3" id="2_0g1d0"]
 [ext_resource type="PackedScene" uid="uid://cld6lpt2s7xht" path="res://Common/GameEnd.tscn" id="2_ja1pt"]
 [ext_resource type="Texture2D" uid="uid://dmnlye1tms4qt" path="res://HellHole/Slug1.png" id="3_ja1pt"]
 [ext_resource type="Texture2D" uid="uid://brnp410ec4x0v" path="res://HellHole/Slug2.png" id="4_0g1d0"]
@@ -38,6 +39,10 @@ _areaLabel = NodePath("UI/CenterContainer/VBoxContainer/Area")
 _startMessage = NodePath("StartMessage")
 _bgRect = NodePath("ColorRect")
 _gameEnd = NodePath("GameEnd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0g1d0")
+autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1352.0
