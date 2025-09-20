@@ -5,7 +5,7 @@ public partial class GameTurnTable : Node2D
 {
     private string[] _animatedNames = new String[]
     {
-        "SlugTar", "SlugSim", "LickTheSlug", "HackySack", "SlugSnake"
+        "SlugTar", "SlugSim", "LickTheSlug", "HackySack", "HellHole", "SlugSnake"
     };
     [Export] AnimatedSprite2D[] _animatedSprites = new AnimatedSprite2D[4];
     enum TrackIndexes

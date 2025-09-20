@@ -15,13 +15,15 @@ public partial class TitleScreen : Node2D
 
     private string[] _buttonSceneMap;
 
+    private Tween _titleTween;
+
     public override void _Ready()
     {
-        Tween tween = GetTree().CreateTween();
-        tween.TweenProperty(_titleTexture, "scale", new Vector2(1f,1f), .4286f).SetTrans(Tween.TransitionType.Quad); 
-        tween.TweenProperty(_titleTexture, "scale", new Vector2(0.9f,0.9f), .4286f).SetTrans(Tween.TransitionType.Quad);
+        _titleTween = GetTree().CreateTween();
+        _titleTween.TweenProperty(_titleTexture, "scale", new Vector2(1f,1f), .4286f).SetTrans(Tween.TransitionType.Quad); 
+        _titleTween.TweenProperty(_titleTexture, "scale", new Vector2(0.9f,0.9f), .4286f).SetTrans(Tween.TransitionType.Quad);
 
-        tween.SetLoops();
+        _titleTween.SetLoops();
         
         
         _timer.Timeout += _startScreensaver;
@@ -32,6 +34,7 @@ public partial class TitleScreen : Node2D
             "res://SlugSimulator/SlugSimulator.tscn",
             "res://LickTheSlug/LickTheSlug.tscn",
             "res://HackySack/HackySack.tscn",
+            "res://HellHole/HellHole.tscn",
             "res://Snake/Snake.tscn"
         };
         
@@ -55,11 +58,15 @@ public partial class TitleScreen : Node2D
         
         if (@event.IsActionPressed("ButtonA") && !_isScreensaverActive)
         {
+            _titleTween.Kill();
             GetTree().ChangeSceneToFile( _buttonSceneMap[_gameTurnTable.GetCurrentSelection()]);
         }
         
         if(Input.IsActionJustPressed("ButtonB"))
-            GetTree().ChangeSceneToFile( "res://Credits/Credits.tscn");  
+        {
+            _titleTween.Kill();
+            GetTree().ChangeSceneToFile("res://Credits/Credits.tscn");
+        }        
         
         if (@event.IsActionPressed("Mute")) //Non-reversible, mainly to not go insane while testing.
         {

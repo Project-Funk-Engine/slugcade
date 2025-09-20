@@ -80,7 +80,7 @@ public partial class HellHole : Node2D
     {
         if (!_started)
         {
-            if (!Input.IsActionPressed("ButtonA")) return;
+            if (!Input.IsActionJustPressed("ButtonA")) return;
             _started = true;
             _playerYVelo = JumpStrength;
             _startMessage.Visible = false;
@@ -159,7 +159,7 @@ public partial class HellHole : Node2D
                 _frameTimer = 30;
                 _stage = 1;
                 _scrollSpeed = 2.5f;
-                _gravity = 0.4f;
+                _gravity = 0.375f;
                 break;
             case 1 when _score >= 400:
                 _timer.Start(_timer.GetWaitTime() + 0.5f);
@@ -167,7 +167,7 @@ public partial class HellHole : Node2D
                 _frameTimer = 30;
                 _stage = 2;
                 _scrollSpeed = 3.5f;
-                _gravity = 0.45f;
+                _gravity = 0.425f;
                 break;
             case 2 when _score >= 600:
                 _timer.Start(_timer.GetWaitTime() + 0.5f);
@@ -175,7 +175,7 @@ public partial class HellHole : Node2D
                 _frameTimer = 30;
                 _stage = 3;
                 _scrollSpeed = 4.5f;
-                _gravity = 0.5f;
+                _gravity = 0.475f;
                 break;
             case 3 when _score >= 750:
                 _timer.Start(_timer.GetWaitTime() + 0.5f);
@@ -183,7 +183,7 @@ public partial class HellHole : Node2D
                 _frameTimer = 30;
                 _stage = 4;
                 _scrollSpeed = 5f;
-                _gravity = 0.55f;
+                _gravity = 0.525f;
                 break;
             
         }
