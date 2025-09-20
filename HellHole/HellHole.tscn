@@ -45,9 +45,16 @@ stream = ExtResource("2_0g1d0")
 autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
 offset_right = 1352.0
 offset_bottom = 771.0
 color = Color(0, 0, 0, 0)
+
+[node name="UnderColor" type="ColorRect" parent="."]
+z_index = -2
+offset_right = 1352.0
+offset_bottom = 771.0
+color = Color(0.309804, 0.235294, 0.305882, 1)
 
 [node name="GameEnd" parent="." instance=ExtResource("2_ja1pt")]
 visible = false
