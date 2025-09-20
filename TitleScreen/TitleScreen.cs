@@ -37,7 +37,7 @@ public partial class TitleScreen : Node2D
         
         if (!(@event is not InputEventJoypadButton and not InputEventKey and not InputEventJoypadMotion))
         {
-            if (@event is InputEventJoypadMotion motion && Math.Abs( motion.AxisValue) < 0.1f) return;
+            if (@event is InputEventJoypadMotion motion && Math.Abs( motion.AxisValue) < 0.5f) return;
 
             if (_isScreensaverActive)
             {
