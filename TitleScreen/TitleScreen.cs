@@ -9,6 +9,7 @@ public partial class TitleScreen : Node2D
     [Export] private AudioStreamPlayer _audioStreamPlayer;
     [Export] private CanvasLayer _screensaverNode;
     [Export] private Timer _timer;
+    [Export] private Sprite2D _titleTexture;
     
     private bool _isScreensaverActive = false;
 
@@ -16,6 +17,13 @@ public partial class TitleScreen : Node2D
 
     public override void _Ready()
     {
+        Tween tween = GetTree().CreateTween();
+        tween.TweenProperty(_titleTexture, "scale", new Vector2(1f,1f), .4286f).SetTrans(Tween.TransitionType.Quad); 
+        tween.TweenProperty(_titleTexture, "scale", new Vector2(0.9f,0.9f), .4286f).SetTrans(Tween.TransitionType.Quad);
+
+        tween.SetLoops();
+        
+        
         _timer.Timeout += _startScreensaver;
         
         _buttonSceneMap = new string[]
