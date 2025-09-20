@@ -42,7 +42,18 @@ public partial class Slugtar : Node2D
             "Kissing a slug will lead to disaster.",
             "You'll make grades. I make slime.",
             "You will get lost in the woods between Porter and Kresge",
-            "Beware the deer. They have seen things."
+            "Beware the deer. They have seen things.",
+            "You will find true love, but it will be a slug.",
+            "Don't fight the turkeys on the way to class. They will win.",
+            "If it has been raining all day, close your blinds. Trust me...",
+            "Your greatest challenge will not be academic, but rather finding parking after 10 AM.",
+            "Your calves are going to be sore tomorrow.",
+            "When the first rain falls, a great liberation will occur. You will not be able to unsee it.",
+            "Yes, you have to walk all the way up there.",
+            "You will get lost in the buildings, they're all mazes.",
+            "Eduroam will fail you during your most important Zoom call",
+            "A professor's office hours hold the secrets the lecture hall cannot",
+            "The laundry machine will leave one sock soaking wet. Always one."
         };
         
         return fortunes[new Random().Next(fortunes.Length)];
