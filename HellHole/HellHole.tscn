@@ -43,6 +43,7 @@ _gameEnd = NodePath("GameEnd")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0g1d0")
 autoplay = true
+parameters/looping = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -151,5 +152,4 @@ zoom = Vector2(5, 5)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 59.0
 one_shot = true
-autostart = true
 ignore_time_scale = true

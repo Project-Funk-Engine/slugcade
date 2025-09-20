@@ -84,6 +84,7 @@ public partial class HellHole : Node2D
             _started = true;
             _playerYVelo = JumpStrength;
             _startMessage.Visible = false;
+            _timer.Start();
             return;
         }
         

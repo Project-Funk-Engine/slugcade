@@ -14,6 +14,7 @@ config/name="SlugCade"
 run/main_scene="uid://nd7ukwmx7jhi"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 run/max_fps=60
+boot_splash/image="uid://cm37tcrb36o8t"
 config/icon="uid://nxgbkrl3t1df"
 
 [autoload]
