@@ -47,7 +47,7 @@ public partial class TitleScreen : Node2D
             if (_isScreensaverActive)
             {
                 _isScreensaverActive = false;
-                _audioStreamPlayer.Play();
+                _audioStreamPlayer.SetVolumeDb(-16.155f);
                 _screensaverNode.Visible = false;
             }  
             _timer.Start();
@@ -71,7 +71,7 @@ public partial class TitleScreen : Node2D
     private void _startScreensaver()
     {
         _isScreensaverActive = true;
-        _audioStreamPlayer.Stop();
+        _audioStreamPlayer.SetVolumeLinear(0);
         _screensaverNode.Visible = true;
     }
 }
