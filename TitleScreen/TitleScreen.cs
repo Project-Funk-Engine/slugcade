@@ -19,12 +19,6 @@ public partial class TitleScreen : Node2D
 
     public override void _Ready()
     {
-        _titleTween = GetTree().CreateTween();
-        _titleTween.TweenProperty(_titleTexture, "scale", new Vector2(1f,1f), .4286f).SetTrans(Tween.TransitionType.Quad); 
-        _titleTween.TweenProperty(_titleTexture, "scale", new Vector2(0.9f,0.9f), .4286f).SetTrans(Tween.TransitionType.Quad);
-
-        _titleTween.SetLoops();
-        
         
         _timer.Timeout += _startScreensaver;
         
