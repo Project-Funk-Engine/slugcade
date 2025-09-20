@@ -14,9 +14,7 @@ public partial class TitleScreen : Node2D
     private bool _isScreensaverActive = false;
 
     private string[] _buttonSceneMap;
-
-    private Tween _titleTween;
-
+    
     public override void _Ready()
     {
         
@@ -52,13 +50,11 @@ public partial class TitleScreen : Node2D
         
         if (@event.IsActionPressed("ButtonA") && !_isScreensaverActive)
         {
-            _titleTween.Kill();
             GetTree().ChangeSceneToFile( _buttonSceneMap[_gameTurnTable.GetCurrentSelection()]);
         }
         
         if(Input.IsActionJustPressed("ButtonB"))
         {
-            _titleTween.Kill();
             GetTree().ChangeSceneToFile("res://Credits/Credits.tscn");
         }        
         
